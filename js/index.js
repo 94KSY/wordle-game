@@ -95,6 +95,7 @@ function appStart() {
   };
 
   const handleClick = (e) => {
+    console.log(e);
     const key = e.target.dataset.key;
     const thisBlock = document.querySelector(
       `.board-block[data-index='${attempts}${index}']`
@@ -103,7 +104,7 @@ function appStart() {
     else if (index === 5) {
       if (e.target.dataset.key === "Enter") handleEnterKey();
       else return;
-    } else {
+    } else if ("A" <= e.target.dataset.key && e.target.dataset.key <= "Z") {
       thisBlock.innerText = key;
       index++;
     }
